@@ -1,8 +1,8 @@
-# Codex Skills
+# AI Agent Skills
 
-可复用的 Codex Skills 集合，面向 AI 产品研究、产品决策和后续扩展场景。
+可复用的跨平台 Agent Skills 集合，面向 AI 产品研究、产品决策和后续扩展场景。
 
-Reusable Codex skills for AI product research, product decisions, and future workflows.
+Reusable, platform-neutral Agent Skills for AI product research, product decisions, and future workflows.
 
 ## Skills
 
@@ -10,22 +10,41 @@ Reusable Codex skills for AI product research, product decisions, and future wor
 | --- | --- |
 | [ai-product-competitor-research](skills/ai-product-competitor-research/) | 结合当前项目，把 AI 竞品证据转成产品、架构、商业模式和验证决策 |
 
+## 兼容性
+
+Skill 的核心遵循 `SKILL.md + references/` 结构，不绑定特定 Agent。平台专属文件只提供可选的发现、界面或调用适配，不改变核心研究方法。
+
 ## 安装
 
-安装单个 Skill：
+直接下载：[ai-product-competitor-research-v1.1.0.zip](dist/ai-product-competitor-research-v1.1.0.zip)
+
+先克隆仓库：
 
 ```bash
 git clone https://github.com/shaqiansi-maker/codex-skills.git
+```
+
+Codex：
+
+```bash
 cp -R codex-skills/skills/ai-product-competitor-research ~/.codex/skills/
 ```
 
-重新启动 Codex 或开启新会话后，可以显式调用：
+Kiro：
 
-```text
-使用 $ai-product-competitor-research，结合当前项目分析这些竞品……
+```bash
+cp -R codex-skills/skills/ai-product-competitor-research ~/.kiro/skills/
 ```
 
-每个 Skill 的输入要求和使用示例见对应目录中的 `USAGE.md`。
+其他原生支持 Agent Skills 的平台，将整个 Skill 文件夹放入该平台声明的 Skills 目录。不原生支持的 Agent，可以把 `SKILL.md` 作为自定义指令，并允许它读取 `references/`。
+
+调用示例：
+
+```text
+请使用 ai-product-competitor-research Skill，结合当前项目分析这些竞品……
+```
+
+Codex 可使用 `$ai-product-competitor-research`，Kiro 可使用 `/ai-product-competitor-research`。每个 Skill 的输入要求和平台说明见对应目录中的 `USAGE.md`。
 
 ## 目录约定
 
@@ -33,8 +52,8 @@ cp -R codex-skills/skills/ai-product-competitor-research ~/.codex/skills/
 skills/
   <skill-name>/
     SKILL.md
-    agents/openai.yaml
     references/
+    agents/        # 可选的平台元数据
 ```
 
 Skill 目录名应与 `SKILL.md` 中的 `name` 保持一致。
