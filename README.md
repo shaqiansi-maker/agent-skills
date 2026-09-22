@@ -1,24 +1,24 @@
 # Agent Skills
 
-可复用的跨平台 Agent Skills 集合，面向 AI 产品研究、产品决策和后续扩展场景。
+可复用的跨平台 Agent Skills 集合。
 
-Reusable, platform-neutral Agent Skills for AI product research, product decisions, and future workflows.
+Reusable, platform-neutral Agent Skills.
 
 ## Skills
 
 | Skill | 作用 |
 | --- | --- |
-| [ai-product-competitor-research](ai-product-competitor-research/) | 结合当前项目，把 AI 竞品证据转成产品、架构、商业模式和验证决策 |
+| [ai-product-research](ai-product-research/) | 对 AI 产品、竞品或跨产品能力进行证据驱动研究与功能验证，并形成项目决策或通用知识资产 |
 
 ## 兼容性
 
-Skill 的核心遵循 `SKILL.md + references/` 结构，不绑定特定 Agent。平台专属文件只提供可选的发现、界面或调用适配，不改变核心研究方法。
+Skill 的跨平台核心使用 `SKILL.md + references/`。平台专属文件只提供可选的发现、界面或调用适配，不改变研究方法。
 
 ## 安装
 
-直接下载：[ai-product-competitor-research-v1.2.0.zip](dist/ai-product-competitor-research-v1.2.0.zip)
+直接下载：[ai-product-research-v2.0.0.zip](dist/ai-product-research-v2.0.0.zip)
 
-先克隆仓库：
+或克隆仓库：
 
 ```bash
 git clone https://github.com/shaqiansi-maker/agent-skills.git
@@ -27,13 +27,13 @@ git clone https://github.com/shaqiansi-maker/agent-skills.git
 Codex：
 
 ```bash
-cp -R agent-skills/ai-product-competitor-research ~/.codex/skills/
+cp -R agent-skills/ai-product-research ~/.codex/skills/
 ```
 
 Kiro：
 
 ```bash
-cp -R agent-skills/ai-product-competitor-research ~/.kiro/skills/
+cp -R agent-skills/ai-product-research ~/.kiro/skills/
 ```
 
 其他原生支持 Agent Skills 的平台，将整个 Skill 文件夹放入该平台声明的 Skills 目录。不原生支持的 Agent，可以把 `SKILL.md` 作为自定义指令，并允许它读取 `references/`。
@@ -41,10 +41,10 @@ cp -R agent-skills/ai-product-competitor-research ~/.kiro/skills/
 调用示例：
 
 ```text
-请使用 ai-product-competitor-research Skill，结合当前项目分析这些竞品……
+请使用 ai-product-research，研究这些 AI 产品在 MCP、权限和审计上的共同设计，并判断哪些结论可以用于当前项目。
 ```
 
-Codex 可使用 `$ai-product-competitor-research`，Kiro 可使用 `/ai-product-competitor-research`。每个 Skill 的输入要求和平台说明见对应目录中的 `USAGE.md`。
+Codex 可使用 `$ai-product-research`，Kiro 可使用 `/ai-product-research`。完整说明见 [USAGE.md](ai-product-research/USAGE.md)。
 
 ## 目录约定
 

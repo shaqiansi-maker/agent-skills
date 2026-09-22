@@ -1,4 +1,0 @@
-interface:
-  display_name: "AI 产品竞品研究"
-  short_description: "结合当前项目，把 AI 竞品证据转成产品与架构决策"
-  default_prompt: "使用 $ai-product-competitor-research 分析这些 AI 竞品，并结合当前项目给出立即做、先验证、以后做和不做的建议。"

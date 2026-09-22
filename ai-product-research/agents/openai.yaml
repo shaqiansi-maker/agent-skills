@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI 产品研究"
+  short_description: "用可验证证据分析 AI 产品、能力与项目决策"
+  default_prompt: "使用 $ai-product-research 判断我的研究意图，对指定 AI 产品或能力进行证据驱动分析；能实测时给出可复现验证，最后形成可使用的产品、架构、选型或知识结论。"
